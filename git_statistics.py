@@ -267,7 +267,7 @@ if __name__ == '__main__':
             if month > 12:
                 year += 1
                 month = 1
-            end_day = str(year) + str(month) + '01'
+            end_day = str(year) + '%02d' % month + '01'
         #参数1为8位，统计此日至今
         elif len(date) == 8:
             now = datetime.datetime.now()
@@ -283,10 +283,11 @@ if __name__ == '__main__':
         if month > 12:
             year += 1
             month = 1
-        start_day = str(now.year) + str(now.month) + '01'
-        end_day = str(year) + str(month) + '01'
+        start_day = str(now.year) + '%02d' % now.month + '01'
+        end_day = str(year) + '%02d' % month + '01'
         print(f'统计本月{start_day}-{end_day}')
     start_date = datetime.datetime.strptime(start_day, '%Y%m%d')
     end_date = datetime.datetime.strptime(end_day, '%Y%m%d')
 
     start()
+
