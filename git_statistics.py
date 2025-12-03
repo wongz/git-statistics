@@ -6,9 +6,9 @@ from collections import defaultdict
 import requests
 
 """git仓库地址"""
-root_url = "http://sourcecode.jsbchina.cn"
+root_url = ""
 """在git上设置的token"""
-token = "KLX6GbczQrSJS7XJBDk5"
+token = ""
 """统计的开始日期"""
 start_day = "20251101"
 """统计的结束日期"""
@@ -288,4 +288,5 @@ if __name__ == '__main__':
         print(f'统计本月{start_day}-{end_day}')
     start_date = datetime.datetime.strptime(start_day, '%Y%m%d')
     end_date = datetime.datetime.strptime(end_day, '%Y%m%d')
+
     start()
